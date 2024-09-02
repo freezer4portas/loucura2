@@ -7,6 +7,7 @@ public class camerafolow : MonoBehaviour
 {
     private Transform alvo;
     public Vector3 offset;
+    public int suavi = 5;
 
     void Start()
     {
@@ -17,6 +18,7 @@ public class camerafolow : MonoBehaviour
     
     void Update()
     {
-        transform.position = alvo.position - offset;
+        Vector3 posfinal = alvo.position - offset;
+        transform.position = Vector3.Lerp(transform.position,posfinal,suavi*Time.deltaTime);
     }
 }
