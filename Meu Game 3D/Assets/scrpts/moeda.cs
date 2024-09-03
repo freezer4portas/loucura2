@@ -16,6 +16,7 @@ public class moeda : MonoBehaviour
     {
         if(other.tag =="Player")
         {
+            FindObjectOfType<GameManeger>().subtraimoedas(1);
             Destroy(gameObject);
         }
     }

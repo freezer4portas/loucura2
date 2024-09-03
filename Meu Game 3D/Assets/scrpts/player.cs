@@ -40,7 +40,9 @@ public class player : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) && noCHAO)
         {
             rb.AddForce(Vector3.up * forcaPulo, ForceMode.Impulse);
+            noCHAO = false;
             
+
         }
 
 
