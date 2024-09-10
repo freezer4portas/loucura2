@@ -10,10 +10,12 @@ public class player : MonoBehaviour
     public int forcaPulo = 7;
     private Rigidbody rb;
     public bool noCHAO;
+    private AudioSource source;
 
     void Start()
     {
         TryGetComponent(out rb);
+        TryGetComponent(out source);
 
     }
 
@@ -22,6 +24,7 @@ public class player : MonoBehaviour
         if (!noCHAO && collision.gameObject.tag == "chão")
         {
             noCHAO = true;
+            
 
         }
     }
@@ -41,6 +44,8 @@ public class player : MonoBehaviour
         {
             rb.AddForce(Vector3.up * forcaPulo, ForceMode.Impulse);
             noCHAO = false;
+            
+            source.Play();
             
 
         }
